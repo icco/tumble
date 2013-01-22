@@ -1,3 +1,3 @@
-# EDIT ME.
+# tumble
 
-I AM A GENERATED README.
+My attempt at a tumblr clone
