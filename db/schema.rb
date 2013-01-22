@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(:version => 2) do
     t.integer  "feed_id"
     t.text     "text"
     t.string   "title"
+    t.datetime "date"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end

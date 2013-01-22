@@ -4,6 +4,8 @@ class CreateEntries < ActiveRecord::Migration
       t.integer :feed_id
       t.text :text
       t.string :title
+      t.datetime :date
+
       t.timestamps
     end
   end
