@@ -11,3 +11,5 @@ My attempt at a tumblr clone
  * http://synthesis-theme.pixelunion.net/
  * http://antiqua-theme.tumblr.com/
  * http://safe.tumblr.com/theme/preview/8738
+ * http://pixelunion.net/themes/paperback/
+ * http://pixelunion.net/themes/anchorage/
