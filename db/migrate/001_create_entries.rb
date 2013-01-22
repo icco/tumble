@@ -1,7 +1,9 @@
 class CreateEntries < ActiveRecord::Migration
   def self.up
     create_table :entries do |t|
+      t.integer :feed_id
       t.text :text
+      t.string :title
       t.timestamps
     end
   end
