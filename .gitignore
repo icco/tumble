@@ -1,4 +1,5 @@
 !vendor/gems/cache/
+.rake_t_cache
 *.gem
 *.rbc
 .DS_Store
