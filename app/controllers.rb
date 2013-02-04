@@ -11,6 +11,13 @@ Tumble.controllers  do
     render :post
   end
 
+  get '/auth/identity/callback' do
+    p params
+    p request.env['omniauth.auth'].inspect
+
+    redirect '/'
+  end
+
   ###
   # Should be admin only...
 
