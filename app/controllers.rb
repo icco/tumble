@@ -6,12 +6,18 @@ Tumble.controllers  do
   end
 
   get :feeds do
-
     render :feeds
   end
 
-  post :feeds do
+  post :rss, :map => '/feed/rss' do
+    redirect :feeds
+  end
 
+  post :twitter, :map => '/feed/twitter' do
+    redirect :feeds
+  end
+
+  post :github, :map => '/feed/github' do
     redirect :feeds
   end
 end
