@@ -2,6 +2,12 @@
 
 My attempt at a tumblr clone
 
+## Models
+
+ * Feeds : locations of data
+ * Entries : cached copies of data from Feeds
+ * Posts : commentary on a group of Entries
+
 ## Theme ideas
 
  * http://safe.tumblr.com/theme/preview/16847
