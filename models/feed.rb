@@ -1,4 +1,5 @@
 class Feed < ActiveRecord::Base
+  has_many :entries
 
   def get_entries
     if type == "rss"
