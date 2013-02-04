@@ -2,7 +2,7 @@ Tumble.controllers  do
   layout :main
 
   get :index do
-    @posts = Post.all.order("modified_at DESC")
+    @posts = Post.order("modified_at DESC").all
     render :index
   end
 
