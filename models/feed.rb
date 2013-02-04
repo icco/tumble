@@ -10,7 +10,6 @@ class Feed < ActiveRecord::Base
       open(self.url) do |rss|
         feed = RSS::Parser.parse(rss)
         feed.items.each do |item|
-          puts "Item: #{item.title} -- #{item.inspect}"
           e = Entry.find_or_create_by_url item.link
           e.feed = self
           e.title = item.title
