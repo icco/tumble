@@ -29,7 +29,7 @@ Tumble.controllers  do
 
     f = Feed.new
     f.url = url
-    f.type = 'rss'
+    f.kind = 'rss'
     f.save
 
     redirect :feeds
