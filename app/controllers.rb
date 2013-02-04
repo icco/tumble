@@ -6,6 +6,7 @@ Tumble.controllers  do
   end
 
   get :feeds do
+    @page_lead = "Manage your feeds..."
     render :feeds
   end
 

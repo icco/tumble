@@ -1,15 +1,19 @@
 class Feed < ActiveRecord::Base
 
-  def self.get_entries url
-    require 'rss'
-    require 'open-uri'
+  def get_entries
+    if type == "rss"
+      require 'rss'
+      require 'open-uri'
 
-    open(url) do |rss|
-      feed = RSS::Parser.parse(rss)
-      puts "Title: #{feed.channel.title}"
-      feed.items.each do |item|
-        puts "Item: #{item.title}"
+      open(self.url) do |rss|
+        feed = RSS::Parser.parse(rss)
+        puts "Title: #{feed.channel.title}"
+        feed.items.each do |item|
+          puts "Item: #{item.title}"
+        end
       end
+    elsif type == "github"
+    elsif type == "twitter"
     end
   end
 end

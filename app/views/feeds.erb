@@ -1,12 +1,12 @@
-<form method="post" action="<%= url_for :rss %>">
-  <input type="text" name="url" />
-  <input type="submit" />
+<form method="post" action="<%= url_for :rss %>" class="form-inline">
+  <input type="text" name="url" class="input-large" placeholder="RSS Feed" />
+  <input type="submit" class="btn" />
 </form>
 
 <form method="post" action="<%= url_for :twitter %>">
-  <input type="submit" />
+  <button type="submit" class="btn">Add Twitter</button>
 </form>
 
 <form method="post" action="<%= url_for :github %>">
-  <input type="submit" />
+  <button type="submit" class="btn">Add Github</button>
 </form>
