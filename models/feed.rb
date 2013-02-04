@@ -11,10 +11,9 @@ class Feed < ActiveRecord::Base
         feed = RSS::Parser.parse(rss)
         feed.items.each do |item|
           puts "Item: #{item.title} -- #{item.inspect}"
-          e = Entry.new
+          e = Entry.find_or_create_by_url item.link
           e.feed = self
           e.title = item.title
-          e.url = item.link
           e.date = item.date
           e.raw = item.to_json
           e.save
