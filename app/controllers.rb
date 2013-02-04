@@ -11,6 +11,13 @@ Tumble.controllers  do
   end
 
   post :rss, :map => '/feed/rss' do
+    url = params[:url]
+
+    f = Feed.new
+    f.url = url
+    f.type = 'rss'
+    f.save
+
     redirect :feeds
   end
 
