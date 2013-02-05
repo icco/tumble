@@ -128,6 +128,7 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  activesupport
   erubis (~> 2.7.0)
   honeybadger
   minitest
