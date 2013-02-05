@@ -11,6 +11,10 @@ Tumble.controllers  do
     render :post
   end
 
+  get :login do
+    redirect '/auth/identity'
+  end
+
   get '/auth/identity/callback' do
     p params
     p request.env['omniauth.auth'].inspect
