@@ -12,7 +12,7 @@ Tumble.controllers  do
   end
 
   get :login do
-    redirect '/auth/identity'
+    redirect "/auth/identity"
   end
 
   get :logout do
@@ -20,15 +20,14 @@ Tumble.controllers  do
     redirect url_for(:index)
   end
 
-  post '/auth/identity/callback' do
-    logger.devel request.env['omniauth.auth'].inspect
+  post "/auth/identity/callback" do
 
     # TODO(icco): put in users...
-    if request.env['omniauth.auth'].info['email'] == 'nat@natwelch.com'
+    if request.env["omniauth.auth"].info["email"] == "nat@natwelch.com"
       session[:loggedin] = true
     end
 
-    redirect '/'
+    redirect "/"
   end
 
   ###
@@ -46,7 +45,8 @@ Tumble.controllers  do
 
   post :post do
     p = Post.new
-    p.text = params['text']
+    p.text = params["text"]
+    p.title = params["title"]
     p.save
 
     params["link"].each do |id|
@@ -55,7 +55,7 @@ Tumble.controllers  do
       e.save
     end
 
-    redirect '/'
+    redirect "/"
   end
 
   get :feeds do
@@ -69,7 +69,7 @@ Tumble.controllers  do
     render :feeds
   end
 
-  post :rss, :map => '/feed/rss' do
+  post :rss, :map => "/feed/rss" do
     if !logged_in?
       redirect url_for(:login)
     end
@@ -78,13 +78,13 @@ Tumble.controllers  do
 
     f = Feed.new
     f.url = url
-    f.kind = 'rss'
+    f.kind = "rss"
     f.save
 
     redirect :feeds
   end
 
-  post :twitter, :map => '/feed/twitter' do
+  post :twitter, :map => "/feed/twitter" do
     if !logged_in?
       redirect url_for(:login)
     end
@@ -92,7 +92,7 @@ Tumble.controllers  do
     redirect :feeds
   end
 
-  post :github, :map => '/feed/github' do
+  post :github, :map => "/feed/github" do
     if !logged_in?
       redirect url_for(:login)
     end
