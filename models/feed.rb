@@ -15,7 +15,7 @@ class Feed < ActiveRecord::Base
           e = Entry.find_or_create_by_url item.link
           e.feed = self
           e.title = item.title
-          e.date = Time.parse(item.date)
+          e.date = item.date
           e.raw = item.to_json
           e.save
         end
