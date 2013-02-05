@@ -1,0 +1,5 @@
+<ul>
+  <% @entries.each do |f| %>
+    <li><a href="<%= f.url %>"><%= f.title %></a> - <%= f.date %></li>
+  <% end %>
+</ul>
