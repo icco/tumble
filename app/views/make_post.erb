@@ -1,5 +1,16 @@
-<ul>
-  <% @entries.each do |f| %>
-    <li><a href="<%= f.url %>"><%= f.title %></a> - <%= f.date %></li>
-  <% end %>
-</ul>
+<form method="post" action="<%= url_for(:post) %>">
+  <textarea class="span12" rows="10" placeholder="Write your post..."></textarea>
+
+  <ul>
+    <% @entries.each do |f| %>
+      <label class="checkbox">
+        <li><input type="checkbox" value=""> <a href="<%= f.url %>"><%= f.title %></a> - <%= f.date %></li>
+      </label>
+    <% end %>
+  </ul>
+
+  <div class="form-actions">
+    <button type="submit" class="btn btn-primary">Create</button>
+    <button type="button" class="btn disabled">Cancel</button>
+  </div>
+</form>

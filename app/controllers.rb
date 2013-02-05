@@ -39,6 +39,7 @@ Tumble.controllers  do
       redirect url_for(:login)
     end
 
+    @page_lead = "Create a new post..."
     @entries = Entry.where(:post_id => nil).order("date DESC")
     render :make_post
   end
