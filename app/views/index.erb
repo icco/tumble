@@ -1,0 +1,12 @@
+<% @posts.each do |p| %>
+  <div class="post">
+    <div class="text">
+      <%= h p.text %>
+    </div>
+    <ul>
+      <% p.entries.each do |e| %>
+        <li><a href="<%= e.url %>"><%= e.title %></a> - <%= e.date %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

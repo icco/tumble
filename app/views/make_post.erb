@@ -1,10 +1,10 @@
 <form method="post" action="<%= url_for(:post) %>">
-  <textarea class="span12" rows="10" placeholder="Write your post..."></textarea>
+  <textarea name="text" class="span12" rows="10" placeholder="Write your post..."></textarea>
 
   <ul>
     <% @entries.each do |f| %>
       <label class="checkbox">
-        <li><input type="checkbox" value=""> <a href="<%= f.url %>"><%= f.title %></a> - <%= f.date %></li>
+        <li><input name="link[]" type="checkbox" value="<%= f.id %>"> <a href="<%= f.url %>"><%= f.title %></a> - <%= f.date %></li>
       </label>
     <% end %>
   </ul>

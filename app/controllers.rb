@@ -44,6 +44,20 @@ Tumble.controllers  do
     render :make_post
   end
 
+  post :post do
+    p = Post.new
+    p.text = params['text']
+    p.save
+
+    params["link"].each do |id|
+      e = Entry.find_by_id id.to_i
+      e.post = p
+      e.save
+    end
+
+    redirect '/'
+  end
+
   get :feeds do
     if !logged_in?
       redirect url_for(:login)
