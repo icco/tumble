@@ -1,6 +1,6 @@
 <ul>
   <% @feeds.each do |f| %>
-    <li><a href="<%= f.url %>"><%= f.title %></a></li>
+    <li><a href="<%= f.url %>"><%= f.url %></a> - <%= f.kind %></li>
   <% end %>
 </ul>
 
