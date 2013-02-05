@@ -22,6 +22,10 @@ ActiveSupport.use_standard_json_time_format = true
 # if you're including raw json in an HTML page.
 ActiveSupport.escape_html_entities_in_json = false
 
+# Set time to UTC:
+Time.zone = "UTC"
+ActiveRecord::Base.default_timezone = :utc
+
 # Now we can estabilish connection with our db
 if connections[Padrino.env]
   url = URI(connections[Padrino.env])
