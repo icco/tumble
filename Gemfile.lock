@@ -18,7 +18,7 @@ GEM
     daemons (1.1.9)
     erubis (2.7.0)
     eventmachine (1.0.0)
-    faraday (0.8.4)
+    faraday (0.8.5)
       multipart-post (~> 1.1)
     hashie (1.2.0)
     honeybadger (1.5.0)
