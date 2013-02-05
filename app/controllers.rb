@@ -16,7 +16,7 @@ Tumble.controllers  do
   end
 
   get :logout do
-    session = {}
+    session.clear
     redirect url_for(:index)
   end
 
