@@ -4,8 +4,8 @@ class Feed < ActiveRecord::Base
 
   def get_entries
     if self.kind == "rss"
-      require 'rss'
       require 'open-uri'
+      require 'rss'
 
       open(self.url) do |rss|
         feed = RSS::Parser.parse(rss)
@@ -15,7 +15,7 @@ class Feed < ActiveRecord::Base
           e = Entry.find_or_create_by_url item.link
           e.feed = self
           e.title = item.title
-          e.date = Time.parse(item.date).utc
+          e.date = Time.parse(item.date)
           e.raw = item.to_json
           e.save
         end

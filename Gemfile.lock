@@ -131,6 +131,7 @@ DEPENDENCIES
   activesupport
   erubis (~> 2.7.0)
   honeybadger
+  json
   minitest
   omniauth-github
   omniauth-identity
