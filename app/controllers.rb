@@ -15,9 +15,18 @@ Tumble.controllers  do
     redirect '/auth/identity'
   end
 
+  get :logout do
+    session = {}
+    redirect url_for(:index)
+  end
+
   post '/auth/identity/callback' do
-    p params
-    p request.env['omniauth.auth'].inspect
+    logger.devel request.env['omniauth.auth'].inspect
+
+    # TODO(icco): put in users...
+    if request.env['omniauth.auth'].info['email'] == 'nat@natwelch.com'
+      session[:loggedin] = true
+    end
 
     redirect '/'
   end
@@ -26,16 +35,28 @@ Tumble.controllers  do
   # Should be admin only...
 
   get :post do
+    if !logged_in?
+      redirect url_for(:login)
+    end
+
     @entries = Entry.where(:post_id => nil).order("date DESC")
     render :make_post
   end
 
   get :feeds do
+    if !logged_in?
+      redirect url_for(:login)
+    end
+
     @page_lead = "Manage your feeds..."
     render :feeds
   end
 
   post :rss, :map => '/feed/rss' do
+    if !logged_in?
+      redirect url_for(:login)
+    end
+
     url = params[:url]
 
     f = Feed.new
@@ -47,10 +68,18 @@ Tumble.controllers  do
   end
 
   post :twitter, :map => '/feed/twitter' do
+    if !logged_in?
+      redirect url_for(:login)
+    end
+
     redirect :feeds
   end
 
   post :github, :map => '/feed/github' do
+    if !logged_in?
+      redirect url_for(:login)
+    end
+
     redirect :feeds
   end
 end
