@@ -15,7 +15,7 @@ Tumble.controllers  do
     redirect '/auth/identity'
   end
 
-  get '/auth/identity/callback' do
+  post '/auth/identity/callback' do
     p params
     p request.env['omniauth.auth'].inspect
 
