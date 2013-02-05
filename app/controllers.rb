@@ -49,6 +49,8 @@ Tumble.controllers  do
     end
 
     @page_lead = "Manage your feeds..."
+    @feeds = Feed.all
+
     render :feeds
   end
 

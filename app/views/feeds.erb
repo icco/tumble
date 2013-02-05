@@ -1,3 +1,9 @@
+<ul>
+  <% @feeds.each do |f| %>
+    <li><a href="<%= f.url %>"><%= f.title %></a></li>
+  <% end %>
+</ul>
+
 <form method="post" action="<%= url_for :rss %>" class="form-inline">
   <input type="text" name="url" class="input-large" placeholder="RSS Feed" />
   <input type="submit" class="btn" />
