@@ -1,3 +1,3 @@
 class Post < ActiveRecord::Base
-  has_many :entries
+  has_many :entries, :order => 'date DESC'
 end
