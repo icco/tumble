@@ -49,10 +49,12 @@ Tumble.controllers  do
     p.title = params["title"]
     p.save
 
-    params["link"].each do |id|
-      e = Entry.find_by_id id.to_i
-      e.post = p
-      e.save
+    if params["link"]
+      params["link"].each do |id|
+        e = Entry.find_by_id id.to_i
+        e.post = p
+        e.save
+      end
     end
 
     redirect "/"
