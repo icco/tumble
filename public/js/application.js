@@ -4,4 +4,8 @@ $(document).ready(function() {
     itemSelector: '.post',
   });
   */
+
+  $('#wrap').tooltip({
+    'selector': 'time',
+  });
 });

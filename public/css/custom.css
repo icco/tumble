@@ -1,3 +1,7 @@
+time {
+  cursor: default;
+}
+
 .page-header h1 a, .page-header h1 a:visited  {
   color: #333;
 }

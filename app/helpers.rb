@@ -6,7 +6,10 @@ Tumble.helpers do
   end
 
   def t time
-    return "<time datetime=\"#{time.iso8601}\">#{time_ago_in_words time} ago</time>"
+    zone_name = "America/Los_Angeles"
+    zone = ActiveSupport::TimeZone[zone_name]
+    time = zone.at(time)
+    return "<time rel=\"tooltip\" title=\"#{time.to_s(:full)}\" datetime=\"#{time.iso8601}\">#{time_ago_in_words time} ago</time>"
   end
 
   def m text
