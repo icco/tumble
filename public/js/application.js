@@ -1,1 +1,5 @@
-// Put your application scripts here
+$(document).ready(function() {
+  $('#main').masonry({
+    itemSelector: '.post',
+  });
+});
