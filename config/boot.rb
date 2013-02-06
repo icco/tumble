@@ -21,8 +21,6 @@ I18n.default_locale = :en
 
 ## Configure your HTML5 data helpers
 Padrino::Helpers::TagHelpers::DATA_ATTRIBUTES.push(:dialog)
-text_field :foo, :dialog => true
-Generates: <input type="text" data-dialog="true" name="foo" />
 
 ## Add helpers to mailer
 Mail::Message.class_eval do
