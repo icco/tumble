@@ -1,3 +1,11 @@
+.page-header h1 a, .page-header h1 a:visited  {
+  color: #333;
+}
+
+.page-header h1 a:hover {
+  text-decoration: none;
+}
+
 .container {
   width: 500px;
 }
