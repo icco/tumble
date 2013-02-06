@@ -1,5 +1,8 @@
 <% @posts.each do |p| %>
   <div class="post clearfix">
+    <div class="title">
+      <%= h p.title %>
+    </div>
     <div class="text">
       <%= m p.text %>
     </div>
