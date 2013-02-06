@@ -5,7 +5,7 @@
     </div>
     <ul>
       <% p.entries.each do |e| %>
-        <li><a href="<%= e.url %>"><%= e.title %></a> - <%= e.date %></li>
+        <li><a href="<%= e.url %>"><%= e.title %></a> - <%= t e.date %></li>
       <% end %>
     </ul>
   </div>
