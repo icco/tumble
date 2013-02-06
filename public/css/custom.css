@@ -1,3 +1,7 @@
+.container {
+  width: 500px;
+}
+
 label.checkbox li {
   list-style: none;
 }
@@ -12,6 +16,8 @@ label.checkbox li {
   line-height: 20px;
   color: #999999;
   font-size: 85%;
+  float: right;
+  margin-left: 6px;
 }
 
 .post .meta::before {
