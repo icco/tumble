@@ -3,10 +3,13 @@
     <div class="text">
       <%= m p.text %>
     </div>
+
     <ul>
       <% p.entries.each do |e| %>
         <li><a href="<%= e.url %>"><%= e.title %></a> - <%= t e.date %></li>
       <% end %>
     </ul>
+
+    <div class="meta"><%= t p.updated_at %> <a href="<%= url_for(:post, :id => p.id) %>">#</a></div>
   </div>
 <% end %>
