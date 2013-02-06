@@ -6,7 +6,7 @@ Tumble.helpers do
   end
 
   def t time
-    return "<time datetime=\"#{time.iso8601}\">#{time.to_s(:short)}</time>"
+    return "<time datetime=\"#{time.iso8601}\">#{time_ago_in_words time} ago</time>"
   end
 
   def m text
