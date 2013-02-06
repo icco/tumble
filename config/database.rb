@@ -1,5 +1,6 @@
 ##
 # Database config for relational db.
+init = Time.now
 connections = {
   :development => "postgres://localhost/tumble",
   :test => "postgres://postgres@localhost/tumble_test",
@@ -47,7 +48,7 @@ if connections[Padrino.env]
   end
 
   # Log what we are connecting to.
-  logger.push " DB: #{options.inspect}", :devel
+  logger.bench "DB", init, "#{options.inspect}", :devel, :green
 
   ActiveRecord::Base.establish_connection(options)
 else
