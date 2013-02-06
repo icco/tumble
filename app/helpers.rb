@@ -17,6 +17,6 @@ Tumble.helpers do
       :fenced_code_blocks => true
     )
 
-    return r.render(h(text))
+    return r.render(text)
   end
 end
