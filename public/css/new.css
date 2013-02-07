@@ -4,8 +4,37 @@
 
 body {
   font-family: 'Droid Sans', sans-serif;
+  color: #444;
 }
 
 h1 {
   font-family: 'Wire One', sans-serif;
 }
+
+#wrap {
+  width: 940px;
+  margin: 0 auto;
+  padding: 0 60px 60px 0;
+  border-left: 1px solid #eee;
+  border-right: 1px solid #eee;
+  position: relative;
+  overflow: hidden;
+}
+
+.post {
+}
+
+.post .meta {
+  font-weight: normal;
+  font-size: 10px;
+  line-height: 20px;
+  color: #999999;
+  width: 100%;
+  padding-right: 40px;
+  border-top: 1px solid #eee;
+}
+
+.invisible { visibility: hidden; }
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+.clearfix:after { clear: both; }
+.clearfix { *zoom: 1; }
