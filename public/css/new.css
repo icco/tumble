@@ -22,6 +22,13 @@ h1 {
 }
 
 .post {
+  padding: 25px 90px 22px;
+  margin-bottom: 90px;
+  -moz-box-shadow: 0 4px 0 rgba(94, 94, 94, 0.1);
+  -webkit-box-shadow: 0 4px 0 rgba(94, 94, 94, 0.1);
+  box-shadow: 0 4px 0 rgba(94, 94, 94, 0.1);
+  position: relative;
+  background: #F2F2F2;
 }
 
 .post .meta {
