@@ -6,6 +6,11 @@ Tumble.controllers  do
     render :index
   end
 
+  get '/test' do
+    @posts = Post.order("updated_at DESC").all
+    render :index, :layout => :new
+  end
+
   get :post, :with => :id do
     @post = Post.where(:id => params[:id]).first
     render :post
