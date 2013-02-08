@@ -16,6 +16,10 @@ Tumble.controllers  do
     render :post
   end
 
+  get :about do
+    render :about
+  end
+
   get :login do
     redirect "/auth/identity"
   end
