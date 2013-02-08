@@ -12,6 +12,10 @@ Tumble.helpers do
     return "<time rel=\"tooltip\" title=\"#{time.to_s(:full)}\" datetime=\"#{time.iso8601}\">#{time_ago_in_words time} ago</time>"
   end
 
+  def ago time
+    return "#{time_ago_in_words time} ago"
+  end
+
   def m text
     r = Redcarpet::Markdown.new(
       Redcarpet::Render::HTML.new({:hard_wrap => true}),
