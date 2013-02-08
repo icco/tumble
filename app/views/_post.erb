@@ -1,16 +1,19 @@
 <div class="post clearfix">
-  <div class="title">
-    <%= h post.title %>
-  </div>
-  <div class="text">
-    <%= m post.text %>
-  </div>
+  <div class="textwrap">
+    <div class="title">
+      <%= h post.title %>
+    </div>
 
-  <ul>
-    <% post.entries.each do |e| %>
-      <li><a href="<%= e.url %>"><%= e.title %></a> - <%= t e.date %></li>
-    <% end %>
-  </ul>
+    <div class="text">
+      <%= m post.text %>
+    </div>
+
+    <ul>
+      <% post.entries.each do |e| %>
+        <li><a href="<%= e.url %>"><%= e.title %></a> - <%= t e.date %></li>
+      <% end %>
+    </ul>
+  </div>
 
   <div class="meta"><%= t post.updated_at %> <a href="<%= url_for(:post, :id => post.id) %>">#</a></div>
 </div>

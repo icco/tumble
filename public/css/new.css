@@ -8,27 +8,38 @@ body {
 }
 
 h1 {
+}
+
+.page-header h1 {
+  font-size: 3em;
   font-family: 'Wire One', sans-serif;
 }
 
+.page-header {
+  padding-right: 10px;
+  text-align: right;
+}
+
+.page-header h1 a, .page-header h1 a:visited  {
+  color: #333;
+}
+
 #wrap {
-  width: 940px;
+  width: 600px;
   margin: 0 auto;
-  padding: 0 60px 60px 0;
-  border-left: 1px solid #eee;
+  padding: 0;
   border-right: 1px solid #eee;
   position: relative;
   overflow: hidden;
 }
 
+.post .textwrap {
+  padding: 10px;
+}
+
 .post {
-  padding: 25px 90px 22px;
-  margin-bottom: 90px;
-  -moz-box-shadow: 0 4px 0 rgba(94, 94, 94, 0.1);
-  -webkit-box-shadow: 0 4px 0 rgba(94, 94, 94, 0.1);
-  box-shadow: 0 4px 0 rgba(94, 94, 94, 0.1);
+  margin-bottom: 40px;
   position: relative;
-  background: #F2F2F2;
 }
 
 .post .meta {
@@ -39,6 +50,30 @@ h1 {
   width: 100%;
   padding-right: 40px;
   border-top: 1px solid #eee;
+}
+
+a:hover {
+  color: #005580;
+  text-decoration: underline;
+}
+
+a:hover, a:active {
+  outline: 0;
+}
+
+a:focus {
+  outline: thin dotted #333;
+  outline: 5px auto -webkit-focus-ring-color;
+  outline-offset: -2px;
+}
+
+a {
+  color: #08c;
+  text-decoration: none;
+}
+
+time {
+  cursor: default;
 }
 
 .invisible { visibility: hidden; }
