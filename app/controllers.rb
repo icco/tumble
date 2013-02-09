@@ -28,11 +28,11 @@ Tumble.controllers  do
           item.summary = p.summary
         end
       end
-
-      p rss
-
-      rss.to_s
     end
+
+    p rss
+
+    return rss.to_s
   end
 
   get '/test' do
