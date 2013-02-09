@@ -30,11 +30,6 @@ h1 {
   text-decoration: none;
 }
 
-.about {
-  padding: 10px;
-  text-align: justify;
-}
-
 #wrap {
   width: 600px;
   margin: 0 auto;
@@ -44,8 +39,9 @@ h1 {
   overflow: hidden;
 }
 
-.post .textwrap {
-  padding: 10px;
+.post .textwrap, .about {
+  padding: 0 20px 10px 0;
+  text-align: justify;
 }
 
 .post {
