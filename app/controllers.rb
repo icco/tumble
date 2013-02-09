@@ -29,7 +29,7 @@ Tumble.controllers  do
         end
       end
 
-      return rss
+      rss
     end
   end
 
