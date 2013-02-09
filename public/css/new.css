@@ -101,6 +101,19 @@ time {
   cursor: default;
 }
 
+.stat {
+  width: 200px;
+  height: 100px;
+  float: left;
+  text-align: center;
+  margin: 20px;
+}
+
+.stat .big {
+  font-size: 3em;
+  font-weight: 700;
+}
+
 #footer {
   height: 60px;
   background-color: #f5f5f5;

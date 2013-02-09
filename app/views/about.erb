@@ -1,4 +1,6 @@
 <div class="about">
+  <h2>About</h2>
+
   <p><a href="http://tumble.io" title="http://tumble.io">Tumble.io</a> came about when <a href="http://natwelch.com" title="http://natwelch.com">Nat</a> had two realizations about the media he consumes and shares. </p>
 
   <p>The first was that he spends a lot of time on the internet. But He doesn't watch a ton of YouTube videos or play a ton of games, instead, he reads. He reads a lot. One of the things he does when he reads is he bookmarks almost every article he reads on <a href="http://pinboard.in" title="http://pinboard.in">pinboard</a>.</p>
@@ -10,4 +12,18 @@
   <p>Tumble.io was also inspired by an <a href="https://soundcloud.com/designobserver/design-matters-with-debbie-147" title="https://soundcloud.com/designobserver/design-matters-with-debbie-147">interview with Jason Kottke</a> he listened to and <a href="http://opensourcebridge.org/wiki/2012/Rise_of_the_Indie_Web" title="http://opensourcebridge.org/wiki/2012/Rise_of_the_Indie_Web">a talk by Tantek Celik</a> he saw.</p>
 
   <p>You can view the source of <a href="https://github.com/icco/tumble" title="https://github.com/icco/tumble">Tumble.io on GitHub</a>.</p>
+</div>
+
+<div class="about">
+  <h2>Stats</h2>
+
+  <div class="stat">
+    <div class="big"><%= @avgs[:posts] %></div>
+    <div class="small">Avg. Posts made per day</div>
+  </div>
+
+  <div class="stat">
+    <div class="big"><%= @avgs[:articles] %></div>
+    <div class="small">Avg. Articles read per day</div>
+  </div>
 </div>

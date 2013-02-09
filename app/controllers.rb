@@ -41,6 +41,11 @@ Tumble.controllers  do
   end
 
   get :about do
+    @avgs = {
+      :posts => 5.1,
+      :articles => 20.3
+    }
+
     render :about
   end
 
