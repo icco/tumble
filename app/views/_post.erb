@@ -15,5 +15,9 @@
     </ul>
   </div>
 
-  <div class="meta"><%= t post.updated_at %> <a href="<%= url_for(:post, :id => post.id) %>">#</a></div>
+  <div class="meta">
+    <div class="inner">
+      <%= t post.updated_at %> <a href="<%= url_for(:post, :id => post.id) %>">#</a>
+    </div>
+  </div>
 </div>
