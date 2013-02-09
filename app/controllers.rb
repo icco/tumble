@@ -23,7 +23,7 @@ Tumble.controllers  do
       @posts.each do |p|
         maker.items.new_item do |item|
           item.link = "http://tumble.io/#{url_for(:post, :id => p.id)}"
-          item.title = p.title if p.title
+          item.title = p.title || p.created_at.to_s(:full)
           item.updated = p.updated_at
           item.summary = p.summary
         end
