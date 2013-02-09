@@ -14,7 +14,7 @@ Tumble.controllers  do
 
     rss = RSS::Maker.make("atom") do |maker|
       maker.channel.author = "Nat Welch"
-      maker.channel.updated = Post.max("updated_at")
+      maker.channel.updated = Post.maximum(:updated_at)
       maker.channel.about = "A bunch of random thoughts tumbling for the author's head."
       maker.channel.title = "Tumble.io"
 
