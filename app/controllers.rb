@@ -21,15 +21,16 @@ Tumble.controllers  do
       maker.items.do_sort = true
 
       @posts.each do |p|
-      maker.items.new_item do |item|
-        item.link = "http://tumble.io/#{url_for(:post, :id => p.id)}"
-        item.title = p.title if p.title
-        item.updated = p.updated_at
-        item.summary = p.summary
+        maker.items.new_item do |item|
+          item.link = "http://tumble.io/#{url_for(:post, :id => p.id)}"
+          item.title = p.title if p.title
+          item.updated = p.updated_at
+          item.summary = p.summary
+        end
       end
-    end
 
-    return rss
+      return rss
+    end
   end
 
   get '/test' do
