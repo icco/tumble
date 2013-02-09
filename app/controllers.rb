@@ -25,7 +25,7 @@ Tumble.controllers  do
           item.link = "http://tumble.io/#{url_for(:post, :id => p.id)}"
           item.title = p.title || p.created_at.to_s(:full)
           item.updated = p.updated_at
-          item.summary = p.summary
+          item.summary = p.summary, :type => "html"
         end
       end
     end
