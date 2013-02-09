@@ -23,8 +23,16 @@ h1 {
   height: 6em;
 }
 
-.page-header h1 a, .page-header h1 a:visited  {
+.page-header h1 a,
+.page-header h1 a:visited,
+.page-header h1 a:hover {
   color: #333;
+  text-decoration: none;
+}
+
+.about {
+  padding: 10px;
+  text-align: justify;
 }
 
 #wrap {
