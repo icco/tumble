@@ -38,11 +38,14 @@
 
           <ul class="nav muted">
             <li><a href="<%= url_for :about %>">About</a></li>
+
             <% if logged_in? %>
               <li><a href="<%= url_for :post %>">New</a></li>
               <li><a href="<%= url_for :feeds %>">Feeds</a></li>
               <li><a href="<%= url_for :logout %>">Logout</a></li>
             <% end %>
+
+            <li><a href="<%= url_for :feed %>" class="feed" title="Rss Feed"><img src="/img/49.png" /></a>
           </ul>
         </div>
         <p class="lead"><%= @page_lead %></p>
