@@ -6,6 +6,32 @@ Tumble.controllers  do
     render :index
   end
 
+  # http://www.ruby-doc.org/stdlib-1.9.3/libdoc/rss/rdoc/RSS.html
+  get :feed do
+    require "rss"
+
+    @posts = Post.order("updated_at DESC").all
+
+    rss = RSS::Maker.make("atom") do |maker|
+      maker.channel.author = "Nat Welch"
+      maker.channel.updated = Post.max("updated_at")
+      maker.channel.about = "A bunch of random thoughts tumbling for the author's head."
+      maker.channel.title = "Tumble.io"
+
+      maker.items.do_sort = true
+
+      @posts.each do |p|
+      maker.items.new_item do |item|
+        item.link = "http://tumble.io/#{url_for(:post, :id => p.id)}"
+        item.title = p.title if p.title
+        item.updated = p.updated_at
+        item.summary = p.summary
+      end
+    end
+
+    return rss
+  end
+
   get '/test' do
     @posts = Post.order("updated_at DESC").all
     render :index, :layout => :new
