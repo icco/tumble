@@ -29,7 +29,9 @@ Tumble.controllers  do
         end
       end
 
-      rss
+      p rss
+
+      rss.to_s
     end
   end
 
