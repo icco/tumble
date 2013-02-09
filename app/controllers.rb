@@ -30,8 +30,7 @@ Tumble.controllers  do
       end
     end
 
-    p rss
-
+    content_type "application/atom+xml"
     return rss.to_s
   end
 
