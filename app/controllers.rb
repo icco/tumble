@@ -35,11 +35,6 @@ Tumble.controllers  do
     return rss.to_s
   end
 
-  get '/test' do
-    @posts = Post.order("updated_at DESC").all
-    render :index, :layout => :new
-  end
-
   get :post, :with => :id do
     @post = Post.where(:id => params[:id]).first
     render :post
@@ -78,7 +73,8 @@ Tumble.controllers  do
 
     @page_lead = "Create a new post..."
     @entries = Entry.where(:post_id => nil).order("date DESC")
-    render :make_post
+
+    render :make_post, :layout => :admin
   end
 
   post :post do
@@ -106,7 +102,7 @@ Tumble.controllers  do
     @page_lead = "Manage your feeds..."
     @feeds = Feed.all
 
-    render :feeds
+    render :feeds, :layout => :admin
   end
 
   post :rss, :map => "/feed/rss" do
