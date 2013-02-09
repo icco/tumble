@@ -7,10 +7,6 @@ class Tumble < Padrino::Application
 
   enable :sessions
 
-  if PADRINO_ENV != "development"
-    use Honeybadger::Rack
-  end
-
   ##
   # Caching support
   #

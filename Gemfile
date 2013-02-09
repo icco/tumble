@@ -5,7 +5,6 @@ ruby "1.9.3"
 gem 'activerecord', :require => "active_record"
 gem 'activesupport', :require => "active_support/all"
 gem 'erubis', "~> 2.7.0"
-gem 'honeybadger'
 gem 'json'
 gem 'minitest', :require => 'minitest/autorun', :group => 'test'
 gem 'pg'

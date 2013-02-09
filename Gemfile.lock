@@ -21,9 +21,6 @@ GEM
     faraday (0.8.5)
       multipart-post (~> 1.1)
     hashie (1.2.0)
-    honeybadger (1.5.0)
-      activesupport
-      json
     http_router (0.10.2)
       rack (>= 1.0.0)
       url_mount (~> 0.2.1)
@@ -131,7 +128,6 @@ DEPENDENCIES
   activerecord
   activesupport
   erubis (~> 2.7.0)
-  honeybadger
   json
   minitest
   omniauth-github
