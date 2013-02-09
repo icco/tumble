@@ -10,4 +10,11 @@ class Post < ActiveRecord::Base
 
     return "<div>#{self.text}</div> <ul>#{entry_text}</ul>"
   end
+
+  def self.avg_per_day
+    groups = Post.all.group_by {|u| u.created_at.beginning_of_day }
+    sum = groups.map {|d| d.count.to_f }.inject(:+)
+    size = groups.size
+    return sum / size
+  end
 end

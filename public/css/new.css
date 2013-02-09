@@ -114,6 +114,10 @@ time {
   font-weight: 700;
 }
 
+.stat .small {
+  font-weight: 300;
+}
+
 #footer {
   height: 60px;
   background-color: #f5f5f5;
