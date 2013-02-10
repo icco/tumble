@@ -12,9 +12,9 @@ class Post < ActiveRecord::Base
   end
 
   def self.avg_per_day
-    groups = Post.all.group_by {|u| u.created_at.beginning_of_day }
-    sum = groups.map {|d| d.count.to_f }.inject(:+)
+    groups = Post.all.group_by {|u| u.created_at.beginning_of_day }.map {|k, v| v.count.to_f }
+    sum = groups.inject(:+)
     size = groups.size
-    return sum / size
+    return (sum / size).round(1)
   end
 end
