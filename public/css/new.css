@@ -50,15 +50,17 @@ h1 {
 }
 
 .post .meta {
-  font-weight: normal;
+  font-weight: 300;
   font-size: 0.7em;
-  color: #999999;
+  color: #333;
   width: 100%;
   padding-right: 40px;
   border-top: 1px solid #eee;
 }
 
 .post .meta .inner {
+  border: 1px solid #eee;
+  background: #eee;
   display: inline-block;
   margin: 0;
   padding: 4px 8px;
