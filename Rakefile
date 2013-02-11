@@ -14,3 +14,10 @@ task :cron do
     f.get_entries
   end
 end
+
+desc "Download and install pg data."
+task :pgdown do
+  puts "heroku pgbackups:capture --expire"
+  puts "curl -o latest.dump `heroku pgbackups:url`"
+  puts "pg_restore --verbose --clean --no-acl --no-owner -h localhost -d tumble latest.dump"
+end
