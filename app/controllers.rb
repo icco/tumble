@@ -138,7 +138,7 @@ Tumble.controllers  do
     redirect '/auth/twitter'
   end
 
-  post "/auth/twitter/callback" do
+  get "/auth/twitter/callback" do
     info = request.env["omniauth.auth"].info
     username = request.env["omniauth.auth"].info["username"]
 
