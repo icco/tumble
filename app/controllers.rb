@@ -139,14 +139,13 @@ Tumble.controllers  do
   end
 
   get "/auth/twitter/callback" do
-    info = request.env["omniauth.auth"].info
-    username = request.env["omniauth.auth"].info["username"]
+    username = request.env["omniauth.auth"].info["nickname"]
 
-    p info.to_json
+    p params.to_json
 
-    f = Feed.new
-    f.url = username
+    f = Feed.find_or_create_by_url username
     f.kind = "twitter"
+    f.save
     
   end
 
