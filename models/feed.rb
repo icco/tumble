@@ -1,6 +1,6 @@
 class Feed < ActiveRecord::Base
   has_many :entries
-  validates :url, url: true
+  #validates :url, url: true
 
   def get_entries
     if self.kind == "rss"
