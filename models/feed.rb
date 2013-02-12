@@ -27,7 +27,7 @@ class Feed < ActiveRecord::Base
       )
 
       client.favorites(self.url).each do |tweet|
-        url = "https://twitter.com/#{tweet.screen_name}/status/#{tweet.id}"
+        url = "https://twitter.com/#{tweet.user.screen_name}/status/#{tweet.id}"
 
         e = Entry.find_or_create_by_url url
         e.feed = self
