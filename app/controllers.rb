@@ -81,7 +81,7 @@ Tumble.controllers  do
     limit ||= 25
 
     @page_lead = "Create a new post..."
-    @entries = Entry.where(:post_id => nil).order("created_at DESC").limit(limit)
+    @entries = Entry.where(:post_id => nil).order("date DESC").limit(limit)
 
     render :make_post, :layout => :admin
   end
