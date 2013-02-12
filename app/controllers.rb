@@ -25,7 +25,6 @@ Tumble.controllers  do
           item.link = "http://tumble.io#{url_for(:post, :id => p.id)}"
           item.title = p.title || p.created_at.to_s(:full)
           item.updated = p.updated_at
-          #item.summary = p.summary
           item.summary = p.text
         end
       end
@@ -141,12 +140,14 @@ Tumble.controllers  do
   get "/auth/twitter/callback" do
     username = request.env["omniauth.auth"].info["nickname"]
 
-    p params.to_json
+    p request.env["omniauth.auth"].to_json
 
     f = Feed.find_or_create_by_url username
     f.kind = "twitter"
+    f.data = params.to_json
     f.save
     
+    redirect :feeds
   end
 
   post :github, :map => "/feed/github" do
