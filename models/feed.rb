@@ -22,8 +22,8 @@ class Feed < ActiveRecord::Base
     elsif self.kind == "twitter"
       data = JSON.parse(self.data)
       client = Twitter::Client.new(
-        :oauth_token => data["token"]
-        :oauth_token_secret => data["secret"]
+        :oauth_token => data["token"],
+        :oauth_token_secret => data["secret"],
       )
 
       client.favorites(self.url).each do |tweet|
