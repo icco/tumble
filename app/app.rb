@@ -17,5 +17,6 @@ class Tumble < Padrino::Application
   OmniAuth.config.logger = logger
   use OmniAuth::Builder do
     provider :identity, :fields => [:email]
+    provider :twitter, ENV['TWITTER_KEY'], ENV['TWITTER_SECRET']
   end
 end
