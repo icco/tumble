@@ -135,7 +135,19 @@ Tumble.controllers  do
       redirect url_for(:login)
     end
 
-    redirect :feeds
+    redirect '/auth/twitter'
+  end
+
+  post "/auth/twitter/callback" do
+    info = request.env["omniauth.auth"].info
+    username = request.env["omniauth.auth"].info["username"]
+
+    p info.to_json
+
+    f = Feed.new
+    f.url = username
+    f.kind = "twitter"
+    
   end
 
   post :github, :map => "/feed/github" do

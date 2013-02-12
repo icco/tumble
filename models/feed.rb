@@ -20,6 +20,8 @@ class Feed < ActiveRecord::Base
       end
     elsif self.kind == "github"
     elsif self.kind == "twitter"
+      favorites_url = "https://api.twitter.com/1.1/favorites/list.json"
+
     end
   end
 end
