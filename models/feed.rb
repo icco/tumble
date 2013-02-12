@@ -20,9 +20,22 @@ class Feed < ActiveRecord::Base
       end
     elsif self.kind == "github"
     elsif self.kind == "twitter"
-      favorites_url = "https://api.twitter.com/1.1/favorites/list.json"
-      favorites_url = "#{favorites_url}?screen_name=#{self.url}"
+      data = JSON.parse(self.data)
+      client = Twitter::Client.new(
+        :oauth_token => data["token"]
+        :oauth_token_secret => data["secret"]
+      )
 
+      client.favorites(self.url).each do |tweet|
+        url = "https://twitter.com/#{tweet.from_user_name}/status/#{tweet.id}"
+
+        e = Entry.find_or_create_by_url url
+        e.feed = self
+        e.title = tweet.text
+        e.date = tweet.created_at
+        e.raw = tweet.to_json
+        e.save
+      end
     end
   end
 end
