@@ -10,7 +10,7 @@
 
     <ul>
       <% post.entries.each do |e| %>
-        <li><a href="<%= e.url %>" title="Read <%= ago e.date %>."><%= e.title %></a></li>
+        <li><a target="_blank" href="<%= e.url %>" title="Read <%= ago e.date %>."><%= e.title %></a></li>
       <% end %>
     </ul>
   </div>
