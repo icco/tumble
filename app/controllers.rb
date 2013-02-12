@@ -76,8 +76,13 @@ Tumble.controllers  do
       redirect url_for(:login)
     end
 
+    if params['limit']
+      limit = params['limit'].to_i
+    end
+    limit ||= 25
+
     @page_lead = "Create a new post..."
-    @entries = Entry.where(:post_id => nil).order("date DESC")
+    @entries = Entry.where(:post_id => nil).order("date DESC").limit(limit)
 
     render :make_post, :layout => :admin
   end
