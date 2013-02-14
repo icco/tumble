@@ -5,10 +5,10 @@ class Post < ActiveRecord::Base
   def summary
     entry_text = ""
     self.entries.each do |e|
-      entry_text += "<li><a href=\"#{e.url}\">#{e.title}</a></li>"
+      entry_text += " * [#{e.title}](#{e.url})\n"
     end
 
-    return "<div>#{self.text}</div> <ul>#{entry_text}</ul>"
+    return "#{self.text} \n\n #{entry_text}\n"
   end
 
   def self.avg_per_day

@@ -23,9 +23,10 @@ Tumble.controllers  do
       @posts.each do |p|
         maker.items.new_item do |item|
           item.link = "http://tumble.io#{url_for(:post, :id => p.id)}"
-          item.title = p.title || p.created_at.to_s(:full)
+          item.title = p.created_at.to_s(:full)
           item.updated = p.updated_at
-          item.summary = p.text
+          #item.summary = "<![CDATA[#{m(p.summary)}]]>"
+          item.summary = m(p.summary)
         end
       end
     end
