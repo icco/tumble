@@ -2,6 +2,9 @@ Tumble.controllers  do
   layout :main
 
   get :index do
+
+    StatHat::API.ez_post_value("tumble.io/index", "nat@natwelch.com", 1)
+
     @posts = Post.order("updated_at DESC").all
     render :index
   end
