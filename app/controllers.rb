@@ -30,8 +30,7 @@ Tumble.controllers  do
           item.link = "http://tumble.io#{url_for(:post, :id => p.id)}"
           item.title = p.created_at.to_s(:full)
           item.updated = p.updated_at
-          #item.summary = "<![CDATA[#{m(p.summary)}]]>"
-          item.summary = m(p.summary)
+          item.content = m(p.summary)
         end
       end
     end
