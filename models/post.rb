@@ -3,7 +3,7 @@ class Post < ActiveRecord::Base
 
   # used mainly for rss
   def summary
-    entry_text = ""
+    entry_text = "\n"
     self.entries.each do |e|
       entry_text += " * [#{e.title}](#{e.url})\n"
     end
