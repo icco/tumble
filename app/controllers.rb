@@ -10,6 +10,8 @@ Tumble.controllers  do
   get :feed do
     require "rss"
 
+    StatHat::API.ez_post_value("tumble.io/feed", "nat@natwelch.com", 1)
+
     @posts = Post.order("updated_at DESC").all
 
     rss = RSS::Maker.make("atom") do |maker|

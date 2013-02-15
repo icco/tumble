@@ -14,6 +14,7 @@ gem 'redcarpet'
 gem 'rr', :group => 'test'
 gem 'sass'
 gem 'sinatra-flash', :require => 'sinatra/flash'
+gem 'stathat'
 gem 'thin'
 gem 'twitter'
 
