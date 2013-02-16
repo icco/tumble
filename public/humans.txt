@@ -1,0 +1,15 @@
+/* TEAM */
+
+Your title: Nat Welch
+Site: http://natwelch.com
+Twitter: @icco
+Location: San Francisco, CA USA
+
+/* THANKS */
+
+Name: Alex Baldwin
+
+/* SITE */
+
+Standards: HTML5, CSS3, Ruby
+Components: jQuery, Padrino, Active Record
