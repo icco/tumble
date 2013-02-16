@@ -2,7 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Nat's Tumble</title>
+
+    <% if @title %>
+      <title><%= @title %> | Tumble.io</title>
+    <% else %>
+      <title>Tumble.io</title>
+    <% end %>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
