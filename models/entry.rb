@@ -1,6 +1,7 @@
 class Entry < ActiveRecord::Base
   belongs_to :feed
   belongs_to :post
+  validates :url, url: true
 
   def self.avg_per_day
     groups = Entry.all.group_by {|u| u.date.beginning_of_day }.map {|k, v| v.count.to_f }
