@@ -16,7 +16,7 @@ class Feed < ActiveRecord::Base
           e.raw = item.to_json
           e.save
 
-          logger.push "Inserted Entry #{e.inspect}", :info
+          logger.push "Inserted Entry #{e.url}", :info
         end
       end
     elsif self.kind == "github"
