@@ -16,6 +16,8 @@ class Feed < ActiveRecord::Base
           e.date = item.date
           e.raw = item.to_json
           e.save
+
+          logger.push "Inserted Entry #{e.inspect}", :info
         end
       end
     elsif self.kind == "github"
@@ -35,6 +37,8 @@ class Feed < ActiveRecord::Base
         e.date = tweet.created_at
         e.raw = tweet.to_json
         e.save
+
+        logger.push "Inserted Entry #{e.inspect}", :info
       end
     end
   end
