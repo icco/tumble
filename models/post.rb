@@ -23,7 +23,7 @@ class Post < ActiveRecord::Base
   end
 
   def self.avg_links
-    groups = Entry.all.group_by {|u| u.post_id }.map {|k, v| v.count.to_f }
+    groups = Entry.where("post_id IS NOT NULL").group_by {|u| u.post_id }.map {|k, v| v.count.to_f }
     sum = groups.inject(:+)
     size = groups.size
     return (sum / size).round(1)
