@@ -68,6 +68,13 @@ h1 {
   line-height: 1em;
 }
 
+.post .meta .share {
+  display: inline-block;
+  float: right;
+  margin: 3px;
+  width: 140px;
+}
+
 a:hover {
   color: #005580;
   text-decoration: underline;

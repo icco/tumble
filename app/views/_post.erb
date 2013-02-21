@@ -19,5 +19,21 @@
     <div class="inner">
       <%= t post.updated_at %> <a title="permalink" href="<%= url_for(:post, :id => post.id) %>">#</a>
     </div>
+
+    <div class="share">
+      <!-- AddThis Button BEGIN -->
+      <div class="addthis_toolbox addthis_default_style"
+        addthis:url="http://tumble.io<%= url_for(:post, :id => post.id) %>"
+        addthis:title="Tumble.io Post #<%= post.id %>"
+        >
+        <a class="addthis_button_preferred_1"></a>
+        <a class="addthis_button_preferred_2"></a>
+        <a class="addthis_button_preferred_3"></a>
+        <a class="addthis_button_preferred_4"></a>
+        <a class="addthis_button_compact"></a>
+        <a class="addthis_counter addthis_bubble_style"></a>
+      </div>
+      <!-- AddThis Button END -->
+    </div>
   </div>
 </div>
