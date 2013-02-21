@@ -17,4 +17,15 @@ class Post < ActiveRecord::Base
     size = groups.size
     return (sum / size).round(1)
   end
+
+  def self.avg_words
+    return 0.0
+  end
+
+  def self.avg_links
+    groups = Entry.all.group_by {|u| u.post_id }.map {|k, v| v.count.to_f }
+    sum = groups.inject(:+)
+    size = groups.size
+    return (sum / size).round(1)
+  end
 end

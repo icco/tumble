@@ -49,7 +49,9 @@ Tumble.controllers  do
   get :about do
     @avgs = {
       :posts => Post.avg_per_day,
-      :articles => Entry.avg_per_day
+      :articles => Entry.avg_per_day,
+      :words => Post.avg_words,
+      :links => Post.avg_links,
     }
 
     render :about

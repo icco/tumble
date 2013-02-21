@@ -104,11 +104,11 @@ time {
 }
 
 .stat {
-  width: 200px;
+  width: 150px;
   height: 100px;
   float: left;
   text-align: center;
-  margin: 20px;
+  margin: 10px;
 }
 
 .stat .big {
