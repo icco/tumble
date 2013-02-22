@@ -14,21 +14,26 @@
   <p>You can view the source of <a href="https://github.com/icco/tumble" title="https://github.com/icco/tumble">Tumble.io on GitHub</a>.</p>
 </div>
 
-<div class="about">
+<div class="about clearfix" style="margin-bottom: 50px;">
   <h2>Stats</h2>
 
   <div class="stat">
     <div class="big"><%= @avgs[:posts] %></div>
-    <div class="small">Avg. Posts made per day</div>
+    <div class="small">Avg. posts made per day</div>
   </div>
 
   <div class="stat">
     <div class="big"><%= @avgs[:articles] %></div>
-    <div class="small">Avg. Articles read per day</div>
+    <div class="small">Avg. articles read per day</div>
   </div>
 
   <div class="stat">
     <div class="big"><%= @avgs[:links] %></div>
     <div class="small">Avg. links per post</div>
+  </div>
+
+  <div class="stat">
+    <div class="big"><%= @avgs[:words] %></div>
+    <div class="small">Avg. words per post</div>
   </div>
 </div>

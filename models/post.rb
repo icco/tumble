@@ -19,7 +19,10 @@ class Post < ActiveRecord::Base
   end
 
   def self.avg_words
-    return 0.0
+    posts = Post.all.map {|p| p.text.split.count }
+    sum = posts.inject(:+)
+    size = Post.all.count
+    return (sum / size).round(1)
   end
 
   def self.avg_links
