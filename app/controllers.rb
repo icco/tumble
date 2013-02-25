@@ -96,6 +96,10 @@ Tumble.controllers  do
   end
 
   post :post do
+    if !logged_in?
+      redirect url_for(:login)
+    end
+
     p = Post.new
     p.text = params["text"]
     p.title = params["title"]
@@ -109,7 +113,35 @@ Tumble.controllers  do
       end
     end
 
-    redirect "/"
+    redirect url_for(:index)
+  end
+
+  get :edit, :with => :id do
+    if !logged_in?
+      redirect url_for(:login)
+    end
+
+    @post = Post.where(:id => params[:id]).first
+    @title = "Post #{@post.id}"
+    render :edit_post, :layout => :admin
+  end
+
+  post :edit, :with => :url_id do
+    if !logged_in?
+      redirect url_for(:login)
+    end
+
+    if params[:url_id] == params["id"]
+      @post = Post.where(:id => params[:id]).first
+    else
+      return 500
+    end
+
+    @post.text = params["text"]
+    @post.title = params["title"]
+    @post.save
+
+    redirect url_for(:post, @post.id)
   end
 
   get :feeds do
@@ -155,7 +187,7 @@ Tumble.controllers  do
     f.kind = "twitter"
     f.data = request.env["omniauth.auth"].credentials.to_json
     f.save
-    
+
     redirect :feeds
   end
 

@@ -1,0 +1,20 @@
+<div class="row-fluid">
+  <form method="post" action="<%= url_for(:edit, @post.id) %>">
+    <input type="text" class="span12" value="<%= @post.title %>" placeholder="Optional Title..." name="title"/>
+    <textarea name="text" class="span12" rows="10" placeholder="Write your post..."><%= @post.text %></textarea>
+    <input type="hidden" name="id" value="<%= @post.id %>" />
+
+    <ul>
+      <% @post.entries.each do |f| %>
+        <label class="checkbox">
+          <li><input readonly name="link[]" type="checkbox" checked value="<%= f.id %>"> <a href="<%= f.url %>"><%= f.title %></a> - <%= t f.date %></li>
+        </label>
+      <% end %>
+    </ul>
+
+    <div class="form-actions">
+      <button type="submit" class="btn btn-primary">Update</button>
+      <button type="button" class="btn disabled">Cancel</button>
+    </div>
+  </form>
+</div>
