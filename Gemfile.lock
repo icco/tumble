@@ -15,6 +15,7 @@ GEM
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
     builder (3.0.4)
+    crack (0.1.8)
     daemons (1.1.9)
     erubis (2.7.0)
     eventmachine (1.0.0)
@@ -24,8 +25,10 @@ GEM
     http_router (0.10.2)
       rack (>= 1.0.0)
       url_mount (~> 0.2.1)
+    httparty (0.7.8)
+      crack (= 0.1.8)
     httpauth (0.2.0)
-    i18n (0.6.1)
+    i18n (0.6.2)
     json (1.7.7)
     jwt (0.1.5)
       multi_json (>= 1.0)
@@ -90,6 +93,8 @@ GEM
       mail (~> 2.3.0)
       padrino-core (= 0.10.7)
     pg (0.14.1)
+    pinboard (0.0.4)
+      httparty (= 0.7.8)
     polyglot (0.3.3)
     rack (1.5.2)
     rack-protection (1.3.2)
@@ -103,7 +108,7 @@ GEM
     shotgun (0.9)
       rack (>= 1.0)
     simple_oauth (0.2.0)
-    sinatra (1.3.4)
+    sinatra (1.3.5)
       rack (~> 1.4)
       rack-protection (~> 1.3)
       tilt (~> 1.3, >= 1.3.3)
@@ -141,6 +146,7 @@ DEPENDENCIES
   omniauth-twitter
   padrino
   pg
+  pinboard
   rack-test
   rake
   redcarpet
