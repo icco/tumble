@@ -17,16 +17,20 @@ end
 
 desc "Uses API to get all old entries for pinboard."
 task :pinboard do
-  feed = Feed.where("url LIKE '%pinboard%'").first
-  posts = Pinboard::Post.all(:username => ENV['PINBOARD_USER'], :password => ENV['PINBOARD_PASSWORD'])
 
-  posts.each do |item|
-    e = Entry.find_or_create_by_url item.link
-    e.feed = feed
-    e.title = item.title
-    e.date = item.date
-    e.raw = item.to_json
-    e.save
+  Post.transaction do
+    feed = Feed.where("url LIKE '%pinboard%'").first
+    posts = Pinboard::Post.all(:username => ENV['PINBOARD_USER'], :password => ENV['PINBOARD_PASSWORD'])
+
+    posts.each do |item|
+      p item
+      e = Entry.find_or_create_by_url item.href
+      e.feed = feed
+      e.title = item.description
+      e.date = item.time
+      e.raw = item.to_json
+      e.save
+    end
   end
 end
 
