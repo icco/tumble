@@ -18,7 +18,7 @@ end
 desc "Uses API to get all old entries for pinboard."
 task :pinboard do
 
-  Post.transaction do
+  Entry.transaction do
     feed = Feed.where("url LIKE '%pinboard%'").first
     posts = Pinboard::Post.all(:username => ENV['PINBOARD_USER'], :password => ENV['PINBOARD_PASSWORD'])
 
