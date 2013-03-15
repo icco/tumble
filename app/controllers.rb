@@ -3,7 +3,7 @@ Tumble.controllers  do
 
   get :index do
 
-    StatHat::API.ez_post_count("tumble.io/index", "nat@natwelch.com", 1)
+    count "tumble.io/index", 1
 
     @posts = Post.order("updated_at DESC").all
     render :index
@@ -13,7 +13,7 @@ Tumble.controllers  do
   get :feed do
     require "rss"
 
-    StatHat::API.ez_post_count("tumble.io/feed", "nat@natwelch.com", 1)
+    count "tumble.io/feed", 1
 
     @posts = Post.order("updated_at DESC").all
 
