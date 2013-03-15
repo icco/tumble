@@ -28,7 +28,7 @@ Tumble.controllers  do
       @posts.each do |p|
         maker.items.new_item do |item|
           item.link = "http://tumble.io#{url_for(:post, :id => p.id)}"
-          item.title = p.created_at.to_s(:full)
+          item.title = "Tumble.io Post ##{p.id}"
           item.updated = p.updated_at
           item.content.content = m(p.summary)
           item.content.type = "html"
@@ -87,7 +87,7 @@ Tumble.controllers  do
     if params['limit']
       limit = params['limit'].to_i
     end
-    limit ||= 25
+    limit ||= 30
 
     @page_lead = "Create a new post..."
     @entries = Entry.where(:post_id => nil).order("date DESC").limit(limit)
