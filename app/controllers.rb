@@ -18,7 +18,11 @@ Tumble.controllers  do
     @posts = Post.order("updated_at DESC").all
 
     rss = RSS::Maker.make("atom") do |maker|
-      maker.channel.author = "Nat Welch"
+      maker.channel.authors.new_author do |author|
+        author.email = "nat@natwelch.com"
+        author.name = "Nat Welch"
+        author.uri = "http://natwelch.com"
+      end
       maker.channel.updated = Post.maximum(:updated_at)
       maker.channel.about = "A bunch of random thoughts tumbling for the author's head."
       maker.channel.title = "Tumble.io"
