@@ -18,12 +18,6 @@ I18n.default_locale = :en
 ## Configure your HTML5 data helpers
 Padrino::Helpers::TagHelpers::DATA_ATTRIBUTES.push(:dialog)
 
-## Add helpers to mailer
-Mail::Message.class_eval do
-  include Padrino::Helpers::NumberHelpers
-  include Padrino::Helpers::TranslationHelpers
-end
-
 ##
 # Add your before (RE)load hooks here
 #
