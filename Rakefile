@@ -1,6 +1,7 @@
-require File.expand_path('../config/boot.rb', __FILE__)
 require 'padrino-core/cli/rake'
 
+PadrinoTasks.use(:database)
+PadrinoTasks.use(:activerecord)
 PadrinoTasks.init
 
 desc "Run a local server."
