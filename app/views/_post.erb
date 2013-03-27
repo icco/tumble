@@ -5,7 +5,7 @@
     </div>
 
     <div class="text">
-      <%= m post.text %>
+      <%== m post.text %>
     </div>
 
     <ul>
@@ -17,7 +17,7 @@
 
   <div class="meta">
     <div class="inner">
-      <%= t post.updated_at %>
+      <%== t post.updated_at %>
       <a title="permalink" href="<%= url_for(:post, :id => post.id) %>">#</a>
       <% if logged_in? %>
         <a title="edit" href="<%= url_for(:edit, :id => post.id) %>">e</a>
