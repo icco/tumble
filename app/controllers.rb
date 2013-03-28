@@ -44,6 +44,42 @@ Tumble.controllers  do
     return rss.to_s
   end
 
+  # Creates a simple summary rss feed for ifttt.
+  get :"summary.rss" do
+    require "rss"
+
+    count "tumble.io/summary.rss", 1
+
+    @posts = Post.order("updated_at DESC").all
+
+    rss = RSS::Maker.make("atom") do |maker|
+      maker.channel.authors.new_author do |author|
+        author.email = "nat@natwelch.com"
+        author.name = "Nat Welch"
+        author.uri = "http://natwelch.com"
+      end
+      maker.channel.updated = Post.maximum(:updated_at)
+      maker.channel.about = "A bunch of random thoughts tumbling for the author's head."
+      maker.channel.title = "Tumble.io Summaries"
+
+      maker.items.do_sort = true
+
+      @posts.each do |p|
+        maker.items.new_item do |item|
+          item.link = "http://tumble.io#{url_for(:post, :id => p.id)}"
+          item.title = "Tumble.io Post ##{p.id}"
+          item.updated = p.updated_at
+          # Takes markdown, turns into 30 chars of plain text
+          item.content.content = truncate(strip_tags(m(p.text)))
+          item.content.type = "text"
+        end
+      end
+    end
+
+    content_type "application/atom+xml"
+    return rss.to_s
+  end
+
   get :post, :with => :id do
     @post = Post.where(:id => params[:id]).first
     @title = "Post ##{@post.id}"
