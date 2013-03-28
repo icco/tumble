@@ -46,7 +46,7 @@ Tumble.controllers  do
 
   get :post, :with => :id do
     @post = Post.where(:id => params[:id]).first
-    @title = "Post #{@post.id}"
+    @title = "Post ##{@post.id}"
     render :post
   end
 
