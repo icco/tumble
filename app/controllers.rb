@@ -70,7 +70,7 @@ Tumble.controllers  do
           item.title = "Tumble.io Post ##{p.id}"
           item.updated = p.updated_at
           # Takes markdown, turns into 100 chars of plain text
-          item.content.content = truncate(strip_tags(m(p.text)), :length => 100)
+          item.content.content = truncate(strip_tags(m(p.text)), :length => 100).strip
           item.content.type = "text"
         end
       end
