@@ -1,0 +1,27 @@
+<div style="width: 400px">
+  <form method='post' class="form-horizontal" action='/auth/identity/callback' noValidate='noValidate'>
+
+    <div class="control-group">
+      <label class="control-label" for="auth_key">Email</label>
+      <div class="controls">
+        <input id='auth_key' name='auth_key' type="email" required />
+      </div>
+    </div>
+
+    <div class="control-group">
+      <label class="control-label" for="password">Password</label>
+      <div class="controls">
+        <input type='password' id='password' name='password'/>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <div class="controls">
+        <button class="btn btn-primary" type='submit'>Login</button>
+        <!--
+        <a href='/auth/identity/register' class="btn">Create an Identity</a>
+        -->
+      </div>
+    </div>
+  </form>
+</div>

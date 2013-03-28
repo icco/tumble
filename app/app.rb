@@ -25,3 +25,13 @@ class Tumble < Padrino::Application
     config.consumer_secret = ENV['TWITTER_SECRET']
   end
 end
+
+module OmniAuth
+  module Strategies
+    class Identity
+      def request_phase
+        redirect '/login'
+      end
+    end
+  end
+end

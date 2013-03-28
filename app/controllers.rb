@@ -62,7 +62,7 @@ Tumble.controllers  do
   end
 
   get :login do
-    redirect "/auth/identity"
+    render :login, :layout => :admin
   end
 
   get :logout do
