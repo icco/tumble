@@ -10,14 +10,14 @@ task :local do
 end
 
 desc "Gets new entries into all feeds."
-task :cron do
+task :cron => :environment do
   Feed.all.each do |f|
     f.get_entries
   end
 end
 
 desc "Uses API to get all old entries for pinboard."
-task :pinboard do
+task :pinboard => :environment do
 
   Entry.transaction do
     feed = Feed.where("url LIKE '%pinboard%'").first
