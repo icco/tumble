@@ -6,7 +6,7 @@
     <ul>
       <% @entries.each do |f| %>
         <label class="checkbox">
-          <li><input name="link[]" type="checkbox" value="<%= f.id %>"> <a href="<%= f.url %>"><%= f.title %></a> - <%= t f.date %></li>
+          <li><input name="link[]" type="checkbox" value="<%= f.id %>"> <a href="<%= f.url %>"><%= f.title %></a> - <%== t f.date %></li>
         </label>
       <% end %>
     </ul>
