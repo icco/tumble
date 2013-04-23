@@ -106,7 +106,7 @@ GEM
     rake (10.0.4)
     redcarpet (2.2.2)
     rr (1.0.5)
-    sass (3.2.7)
+    sass (3.2.8)
     shotgun (0.9)
       rack (>= 1.0)
     simple_oauth (0.2.0)
