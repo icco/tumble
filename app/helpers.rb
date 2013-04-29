@@ -26,10 +26,4 @@ Tumble.helpers do
 
     return r.render(text)
   end
-
-  def count key, val
-    if Padrino.env != :development
-      StatHat::API.ez_post_count(key, "nat@natwelch.com", val)
-    end
-  end
 end

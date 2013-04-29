@@ -2,9 +2,6 @@ Tumble.controllers  do
   layout :main
 
   get :index do
-
-    count "tumble.io/index", 1
-
     @posts = Post.order("updated_at DESC").all
     render :index
   end
@@ -12,8 +9,6 @@ Tumble.controllers  do
   # http://www.ruby-doc.org/stdlib-1.9.3/libdoc/rss/rdoc/RSS.html
   get :feed do
     require "rss"
-
-    count "tumble.io/feed", 1
 
     @posts = Post.order("updated_at DESC").all
 
@@ -47,8 +42,6 @@ Tumble.controllers  do
   # Creates a simple summary rss feed for ifttt.
   get :"summary.rss" do
     require "rss"
-
-    count "tumble.io/summary.rss", 1
 
     @posts = Post.order("updated_at DESC").all
 
