@@ -24,7 +24,7 @@ gem 'omniauth-identity'
 gem 'omniauth-twitter'
 
 # Padrino Stable Gem
-gem 'padrino', '~> 0.11'
+gem 'padrino', '>= 0.11'
 
 # For dev
 group :development do
