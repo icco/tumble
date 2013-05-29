@@ -1,5 +1,6 @@
 <div style="width: 400px">
   <form method='post' class="form-horizontal" action='/auth/identity/callback' noValidate='noValidate'>
+    <input name="authenticity_token" value="<%= session[:csrf] %>" type="hidden" />
 
     <div class="control-group">
       <label class="control-label" for="auth_key">Email</label>
