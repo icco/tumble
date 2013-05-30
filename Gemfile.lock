@@ -36,7 +36,7 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.23)
-    minitest (5.0.2)
+    minitest (5.0.3)
     multi_json (1.7.4)
     multi_xml (0.5.3)
     multipart-post (1.2.0)
