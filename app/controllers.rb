@@ -100,7 +100,6 @@ Tumble.controllers  do
   end
 
   post "/auth/identity/callback" do
-
     # TODO(icco): put in users...
     if request.env["omniauth.auth"].info["email"] == "nat@natwelch.com"
       session[:loggedin] = true
