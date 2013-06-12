@@ -8,7 +8,7 @@
     <ul>
       <% @post.entries.each do |f| %>
         <label class="checkbox">
-          <li><input readonly name="link[]" type="checkbox" checked value="<%= f.id %>"> <a href="<%= f.url %>"><%= f.title %></a> - <%= t f.date %></li>
+          <li><input readonly name="link[]" type="checkbox" checked value="<%= f.id %>"> <a href="<%= f.url %>"><%= f.title %></a> - <%== t f.date %></li>
         </label>
       <% end %>
     </ul>
