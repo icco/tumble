@@ -53,7 +53,7 @@ GEM
     omniauth-github (1.1.0)
       omniauth (~> 1.0)
       omniauth-oauth2 (~> 1.1)
-    omniauth-identity (1.1.0)
+    omniauth-identity (1.1.1)
       bcrypt-ruby (~> 3.0)
       omniauth (~> 1.0)
     omniauth-oauth (1.0.1)
