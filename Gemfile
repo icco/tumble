@@ -4,6 +4,7 @@ ruby '1.9.3'
 # Project requirements
 gem 'activerecord', '~> 3.0', :require => 'active_record'
 gem 'activesupport', :require => 'active_support/all'
+gem 'bcrypt-ruby', '~> 3.0.0' 
 gem 'erubis', '~> 2.7.0'
 gem 'json'
 gem 'minitest', :require => 'minitest/autorun', :group => 'test'

@@ -12,6 +12,9 @@ Bundler.require(:default, PADRINO_ENV.to_sym)
 Padrino::Logger::Config[:development][:log_level]  = :devel
 Padrino::Logger::Config[:development][:log_static] = true
 
+Padrino::Logger::Config[:production][:log_level]  = :info
+Padrino::Logger::Config[:production][:log_static] = true
+
 ## Configure your I18n
 I18n.default_locale = :en
 
