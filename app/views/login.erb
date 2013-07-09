@@ -1,7 +1,5 @@
 <div style="width: 400px">
-  <form method='post' class="form-horizontal" action='/auth/identity/callback'>
-    <input name="authenticity_token" value="<%= session[:csrf] %>" type="hidden" />
-
+  <% form_tag '/auth/identity/callback', :method => :post, :class => 'form-horizontal' do %>
     <div class="control-group">
       <label class="control-label" for="auth_key">Email</label>
       <div class="controls">
@@ -24,5 +22,5 @@
         -->
       </div>
     </div>
-  </form>
+  <% end %>
 </div>
