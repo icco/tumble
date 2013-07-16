@@ -104,7 +104,7 @@ GEM
     rack-test (0.6.2)
       rack (>= 1.0)
     rake (10.1.0)
-    redcarpet (2.3.0)
+    redcarpet (3.0.0)
     rr (1.1.1)
     sass (3.2.9)
     shotgun (0.9)
