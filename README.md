@@ -16,12 +16,10 @@ My attempt at a tumblr clone. See http://tumble.io/about for more.
 
 ## Screenshots
 
-For some reason the colors were inverted in these screenshots... no idea why.
-
 Admin Interface 
 
-![admin interface](http://cl.natw.me/QqX4/d)
+![admin](http://cl.natw.me/QrLo/d)
 
 Homepage when logged in
 
-![home](http://cl.natw.me/QqRv/d)
+![home](http://cl.natw.me/QrnG/d)
