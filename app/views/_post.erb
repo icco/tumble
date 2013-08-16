@@ -1,25 +1,27 @@
-<div class="post clearfix">
+<div class="post h-entry clearfix">
   <div class="textwrap">
-    <div class="title">
+    <div class="title p-name">
       <%= h post.title %>
     </div>
 
-    <div class="text">
-      <%== m post.text %>
-    </div>
+    <div class="e-content">
+      <div class="text p-summary">
+        <%== m post.text %>
+      </div>
 
-    <ul>
-      <% post.entries.each do |e| %>
-        <li><a target="_blank" href="<%= e.url %>" title="Read <%= ago e.date %>."><%= e.title %></a></li>
-      <% end %>
-    </ul>
+      <ul>
+        <% post.entries.each do |e| %>
+          <li><a target="_blank" href="<%= e.url %>" title="Read <%= ago e.date %>."><%= e.title %></a></li>
+        <% end %>
+      </ul>
+    </div>
   </div>
 
   <div class="meta">
     <div class="inner">
-      Written by <a rel='author' href='http://plus.google.com/111804496018663363679'>Nat</a>
-      <%== t post.updated_at %>
-      <a title="permalink" href="<%= url_for(:post, :id => post.id) %>">#</a>
+      Written by <a rel='author' href='http://plus.google.com/111804496018663363679' class="h-card">Nat</a>
+      <time class="dt-published" datetime="<%= post.updated_at %>"><%== t post.updated_at %></time> <!-- TODO: Make sure datetime="" is a valid ISO8601 timestamp -->
+      <a title="permalink" href="<%= url_for(:post, :id => post.id) %>" class="u-url">#</a>
       <% if logged_in? %>
         <a title="edit" href="<%= url_for(:edit, :id => post.id) %>">e</a>
       <% end %>
