@@ -22,4 +22,4 @@ Admin Interface
 
 Homepage when logged in
 
-![home](http://cl.natw.me/QrnG/d)
+![home](http://cl.natw.me/QqtJ/d)
