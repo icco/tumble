@@ -24,6 +24,12 @@ Tumble.helpers do
       :fenced_code_blocks => true
     )
 
-    return r.render(text)
+    # Render Markdown
+    out = r.render text
+
+    # Link twitter
+    out = out.gsub(/@(\w+)/) {|a| "<a href=\"http://twitter.com/#{a[1..-1]}\"/>#{a}</a>" }
+
+    return out
   end
 end
