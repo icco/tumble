@@ -64,7 +64,7 @@ Tumble.controllers  do
           item.updated = p.updated_at
           # Takes markdown, turns into 100 chars of plain text
           item.content.content = truncate(strip_tags(m(p.text)), :length => 100).strip
-          item.content.type = "text"
+          item.content.type = "html"
         end
       end
     end
