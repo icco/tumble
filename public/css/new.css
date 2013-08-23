@@ -31,9 +31,9 @@ h1 {
 }
 
 #wrap {
-  width: 600px;
+  max-width: 600px;
   margin: 0 auto;
-  padding: 0;
+  padding: 0 20px;
   border-right: 1px solid #eee;
   position: relative;
   overflow: hidden;
