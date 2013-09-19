@@ -74,6 +74,7 @@ Tumble.controllers  do
       end
     end
 
+    etag Digest::SHA1.hexdigest(rss.to_s)
     content_type "application/atom+xml"
     return rss.to_s
   end
