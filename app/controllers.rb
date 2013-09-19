@@ -7,7 +7,10 @@ Tumble.controllers  do
   end
 
   # http://www.ruby-doc.org/stdlib-1.9.3/libdoc/rss/rdoc/RSS.html
-  get :feed do
+  get :feed, :cache => true do
+    cache_key :feed
+    expires_in 86400 # one day
+
     require "rss"
 
     @posts = Post.order("updated_at DESC").all
@@ -35,6 +38,7 @@ Tumble.controllers  do
       end
     end
 
+    etag Digest::SHA1.hexdigest(rss.to_s)
     content_type "application/atom+xml"
     return rss.to_s
   end
@@ -77,6 +81,8 @@ Tumble.controllers  do
   get :post, :with => :id do
     @post = Post.where(:id => params[:id]).first
     @title = "Post ##{@post.id}"
+
+    etag @post.sha1
     render :post
   end
 

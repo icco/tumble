@@ -1,6 +1,9 @@
 class Post < ActiveRecord::Base
   has_many :entries, :order => 'date DESC'
 
+  # Clears feed cache
+  after_save {|i| Tumble.cache.delete(:feed) }
+
   # used mainly for rss
   def summary
     entry_text = "\n"
@@ -9,6 +12,11 @@ class Post < ActiveRecord::Base
     end
 
     return "#{self.text} \n\n #{entry_text}\n"
+  end
+
+  def sha1
+    require 'digest/sha1'
+    return Digest::SHA1.hexdigest(self.summary)
   end
 
   def self.avg_per_day
