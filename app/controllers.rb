@@ -7,10 +7,7 @@ Tumble.controllers  do
   end
 
   # http://www.ruby-doc.org/stdlib-1.9.3/libdoc/rss/rdoc/RSS.html
-  get :feed, :cache => true do
-    cache_key :feed
-    expires_in 86400 # one day
-
+  get :feed do
     require "rss"
 
     @posts = Post.order("updated_at DESC").all
