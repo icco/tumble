@@ -18,6 +18,7 @@ gem 'sass'
 gem 'sinatra-flash', :require => 'sinatra/flash'
 gem 'thin'
 gem 'twitter'
+gem 'webmention'
 
 # Auth stuff
 gem 'omniauth-github'
