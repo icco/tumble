@@ -1,8 +1,21 @@
 class Post < ActiveRecord::Base
   has_many :entries, :order => 'date DESC'
 
-  # Clears feed cache
-  after_save {|i| Tumble.cache.delete(:feed) }
+  # Clears feed cache and sends web mentions
+  after_save do |i|
+    Tumble.cache.delete(:feed)
+    i.entries.each do |e|
+      source = "http://tumble.io/post/#{i.id}"
+      target = e.url
+
+      if endpoint = Webmention::Client.supports_webmention? target
+        Webmention::Client.send_mention endpoint, source, target
+      end
+
+      e.mentioned = true
+      e.save
+    end
+  end
 
   # used mainly for rss
   def summary
