@@ -11,18 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 8) do
+ActiveRecord::Schema.define(:version => 10) do
 
   create_table "entries", :force => true do |t|
     t.integer  "feed_id"
     t.text     "text"
     t.string   "title"
     t.datetime "date"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
     t.text     "raw"
     t.integer  "post_id"
     t.text     "url"
+    t.boolean  "mentioned",  :default => false
   end
 
   create_table "feeds", :force => true do |t|
@@ -38,6 +39,14 @@ ActiveRecord::Schema.define(:version => 8) do
     t.string   "password_digest"
     t.datetime "created_at",      :null => false
     t.datetime "updated_at",      :null => false
+  end
+
+  create_table "mentions", :force => true do |t|
+    t.integer  "post_id"
+    t.string   "url"
+    t.string   "title"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "posts", :force => true do |t|
