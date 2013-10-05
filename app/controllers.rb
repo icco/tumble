@@ -6,6 +6,23 @@ Tumble.controllers  do
     render :index
   end
 
+  post :webmention do
+    content_type :json
+
+    from = URI(params["source"])
+    to = URI(params["target"])
+    if to.host == "tumble.io"
+      post = Post.get(to.path.split("/")[1])
+      post.add_mention(from.to_s)
+
+      status 202
+      { "result": "WebMention was successful" }.to_json
+    else
+      status 400
+      { 'error' => 'target_not_found' }.to_json
+    end
+  end
+
   # http://www.ruby-doc.org/stdlib-1.9.3/libdoc/rss/rdoc/RSS.html
   get :feed do
     require "rss"
