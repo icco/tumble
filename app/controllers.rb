@@ -6,17 +6,18 @@ Tumble.controllers  do
     render :index
   end
 
-  post :webmention do
+  post :webmention, :csrf_protection => false  do
     content_type :json
 
     from = URI(params["source"])
     to = URI(params["target"])
-    if to.host == "tumble.io"
-      post = Post.get(to.path.split("/")[1])
+    if to.host == request.host
+      id = to.path.split("/").delete_if {|i| i.to_i <= 0 }.first
+      post = Post.find(id)
       post.add_mention(from.to_s)
 
       status 202
-      { "result": "WebMention was successful" }.to_json
+      { "result" => "WebMention was successful" }.to_json
     else
       status 400
       { 'error' => 'target_not_found' }.to_json

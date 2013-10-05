@@ -1,5 +1,6 @@
 class Post < ActiveRecord::Base
   has_many :entries, :order => 'date DESC'
+  has_many :mentions, :order => 'created_at DESC'
 
   # Clears feed cache and sends web mentions
   after_save do |i|
@@ -8,13 +9,22 @@ class Post < ActiveRecord::Base
       source = "http://tumble.io/post/#{i.id}"
       target = e.url
 
-      if endpoint = Webmention::Client.supports_webmention? target
+      endpoint = Webmention::Client.supports_webmention? target
+      if endpoint 
         Webmention::Client.send_mention endpoint, source, target
       end
 
       e.mentioned = true
       e.save
     end
+  end
+
+  def add_mention url
+    m = Mention.new
+    m.post = self
+    m.url = url
+
+    return m.save
   end
 
   # used mainly for rss
