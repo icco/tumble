@@ -1,1 +1,13 @@
 <%= partial :post, :locals => { :post => @post } %>
+
+<h3>Mentions</h3>
+
+<ul>
+  <% if @post.mentions.empty? %>
+    <li>No Mentions</li>
+  <% else %>
+    <% @post.mentions.each do |m| %>
+      <li><a target="_blank" href="<%= m.url %>"><%= m.text %></a></li>
+    <% end %>
+  <% end %>
+</ul>
