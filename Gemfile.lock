@@ -38,7 +38,7 @@ GEM
     mime-types (1.25)
     mini_portile (0.5.1)
     minitest (5.0.8)
-    multi_json (1.8.1)
+    multi_json (1.8.2)
     multi_xml (0.5.5)
     multipart-post (1.2.0)
     nokogiri (1.6.0)
@@ -132,7 +132,7 @@ GEM
       faraday (~> 0.8, < 0.10)
       multi_json (~> 1.0)
       simple_oauth (~> 0.2)
-    tzinfo (0.3.37)
+    tzinfo (0.3.38)
     url_mount (0.2.1)
       rack
     webmention (0.1.0)
