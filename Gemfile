@@ -17,7 +17,7 @@ gem 'rr', :group => 'test'
 gem 'sass'
 gem 'sinatra-flash', :require => 'sinatra/flash'
 gem 'thin'
-gem 'twitter'
+gem 'twitter', '~> 4.8'
 gem 'webmention'
 
 # Auth stuff
