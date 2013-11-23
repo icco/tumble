@@ -144,8 +144,13 @@ Tumble.controllers  do
     end
     limit ||= 30
 
+    if params['offset']
+      offset = params['offset'].to_i
+    end
+    offset ||= 0
+
     @page_lead = "Create a new post..."
-    @entries = Entry.where(:post_id => nil).order("date DESC").limit(limit)
+    @entries = Entry.where(:post_id => nil).order("date DESC").limit(limit).offset(offset)
 
     render :make_post, :layout => :admin
   end
