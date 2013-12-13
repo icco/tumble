@@ -96,10 +96,13 @@ Tumble.controllers  do
 
   get :post, :with => :id do
     @post = Post.where(:id => params[:id]).first
-    @title = "Post ##{@post.id}"
-
-    etag @post.sha1
-    render :post
+    if @post.nil?
+      404
+    else
+      @title = "Post ##{@post.id}"
+      etag @post.sha1
+      render :post
+    end
   end
 
   get :about do
