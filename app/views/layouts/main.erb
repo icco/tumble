@@ -33,8 +33,16 @@
       }
     </script>
     <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=icco"></script>
-  </head>
 
+    <% if @post %>
+      <!-- Twitter Card Metadata -->
+      <meta name="twitter:card" content="summary">
+      <meta name="twitter:title" content="Tumble.io Post #<%= @post.id %>">
+      <meta name="twitter:description" content="<%= truncate(strip_tags(m(@post.text)), :length => 100).strip %>">
+      <meta name="twitter:creator" content="@icco">
+      <meta name="twitter:domain" content="tumble.io">
+    <% end %>
+  </head>
   <body>
     <div id="wrap" class="clearfix">
 
