@@ -43,14 +43,15 @@ class Post < ActiveRecord::Base
   end
 
   def self.avg_per_day
-    groups = Post.all.group_by {|u| u.created_at.beginning_of_day }.map {|k, v| v.count.to_f }
-    sum = groups.inject(:+)
-    size = groups.size
+    groups = Post.all.group_by {|u| u.created_at.beginning_of_day }
+    values = groups.map {|k, v| v.count.to_f }
+    sum = values.inject(:+)
+    size = (Time.now - groups.keys.min) / 86400 # Seconds in a day
     return (sum / size).round(1)
   end
 
   def self.avg_words
-    posts = Post.all.map {|p| p.text.split.count }
+    posts = Post.all.map {|p| p.text.split.count.to_f }
     sum = posts.inject(:+)
     size = Post.all.count
     return (sum / size).round(1)
