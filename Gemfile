@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-ruby '1.9.3'
 
 # Project requirements
 gem 'activerecord', '~> 3.0', :require => 'active_record'
