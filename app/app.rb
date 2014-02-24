@@ -12,7 +12,6 @@ class Tumble < Padrino::Application
   #
   register Padrino::Cache
   enable :caching
-  set :cache, Padrino::Cache::Store::Memory.new(100)
 
   OmniAuth.config.logger = logger
   use OmniAuth::Builder do

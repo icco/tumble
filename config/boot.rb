@@ -1,5 +1,5 @@
 # Defines our constants
-PADRINO_ENV  = ENV['PADRINO_ENV'] ||= ENV['RACK_ENV'] ||= 'development'  unless defined?(PADRINO_ENV)
+RACK_ENV = ENV['RACK_ENV'] ||= 'development'  unless defined?(PADRINO_ENV)
 PADRINO_ROOT = File.expand_path('../..', __FILE__) unless defined?(PADRINO_ROOT)
 
 # Load our dependencies
@@ -8,7 +8,7 @@ require 'bundler'
 require 'uri'
 require 'json'
 
-Bundler.require(:default, PADRINO_ENV.to_sym)
+Bundler.require(:default, RACK_ENV.to_sym)
 
 ## Enable devel logging
 Padrino::Logger::Config[:development][:log_level]  = :devel
