@@ -21,7 +21,7 @@ GEM
     faraday (0.9.0)
       multipart-post (>= 1.2, < 3)
     hashie (2.0.5)
-    http_router (0.11.0)
+    http_router (0.11.1)
       rack (>= 1.0.0)
       url_mount (~> 0.2.1)
     httparty (0.11.0)
