@@ -3,8 +3,8 @@
 <% end %>
 
 <ul class="pager">
-  <li class="previous"><a href="<%= url_for(:page, :id => @page_num+1) %>">← Older</a></li>
   <% if @page_num > 1 %>
-    <li class="next"><a href="<%= url_for(:page, :id => @page_num-1) %>">Newer →</a></li>
+    <li class="previous"><a href="<%= url_for(:page, :id => @page_num-1) %>">&#8592; Newer</a></li>
   <% end %>
+  <li class="next"><a href="<%= url_for(:page, :id => @page_num+1) %>">Older &#8594;</a></li>
 </ul>

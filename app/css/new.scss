@@ -147,6 +147,7 @@ time {
 .clearfix { *zoom: 1; }
 
 .pager {
+  padding: 0;
   margin: 20px 0;
   text-align: center;
   list-style: none;
@@ -173,7 +174,6 @@ time {
   display: inline-block;
   padding: 5px 14px;
   background-color: #fff;
-  border: 1px solid #ddd;
   -webkit-border-radius: 15px;
      -moz-border-radius: 15px;
           border-radius: 15px;
