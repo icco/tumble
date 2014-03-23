@@ -1,0 +1,57 @@
+/* http://bit.ly/Yc6YxG */
+@import url(http://fonts.googleapis.com/css?family=Lato:300,400,700|Merriweather:400,300);
+body { font-family: 'Lato', sans-serif; color: #444; }
+
+.page-header h1 { font-size: 3em; font-family: 'Merriweather', serif; font-weight: 100; margin-bottom: 0; }
+
+.page-header { padding-right: 10px; text-align: right; height: 6em; }
+
+.page-header h1 a, .page-header h1 a:visited, .page-header h1 a:hover { color: #333; text-decoration: none; }
+
+#wrap { max-width: 600px; margin: 0 auto; padding: 0 20px; border-right: 1px solid #eee; position: relative; overflow: hidden; }
+
+.post .textwrap, .about { padding: 0 20px 10px 0; text-align: justify; }
+
+.post { margin-bottom: 40px; position: relative; }
+
+.post .meta { font-weight: 300; font-size: 0.7em; color: #333; width: 100%; padding-right: 40px; border-top: 1px solid #eee; }
+
+.post .meta .inner { border: 1px solid #eee; background: #eee; display: inline-block; margin: 0; padding: 4px 8px; text-decoration: none; line-height: 1em; }
+
+.post .meta .share { display: inline-block; float: right; margin: 3px; width: 105px; }
+
+a:hover { color: #005580; text-decoration: underline; }
+
+a:hover, a:active { outline: 0; }
+
+a:focus { outline: thin dotted #333; outline: 5px auto -webkit-focus-ring-color; outline-offset: -2px; }
+
+a { color: #999; text-decoration: none; }
+
+ul.nav { list-style: none; margin: 0; float: right; }
+
+ul.nav li { display: inline-block; padding: 2px 0px 5px 10px; }
+
+time { cursor: default; }
+
+.stat { width: 7em; height: 100px; float: left; text-align: center; margin: 15px; }
+
+.stat .big { font-size: 3em; font-weight: 700; }
+
+.stat .small { font-weight: 300; }
+
+#footer { height: 60px; background-color: #f5f5f5; }
+
+#footer p { padding: 20px; }
+
+.muted { color: #999; }
+
+.pull-right { float: right; }
+
+.invisible { visibility: hidden; }
+
+.clearfix:before, .clearfix:after { content: ""; display: table; }
+
+.clearfix:after { clear: both; }
+
+.clearfix { *zoom: 1; }
