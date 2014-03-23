@@ -6,17 +6,18 @@ Tumble.controllers  do
   get :index do
     @posts = Post.order("updated_at DESC").limit(PER_PAGE)
     @page_num = 1
+    @pages = (Post.count / PER_PAGE) + 1
     render :index
   end
 
   get :page, :with => :id do
-    page_num = params[:id].to_i
-    if page_num < 2
+    @page_num = params[:id].to_i
+    @pages = (Post.count / PER_PAGE) + 1
+    if @page_num < 2 or @page_num > @pages
       redirect url_for(:index)
     else
-      offset = PER_PAGE * (page_num - 1)
+      offset = PER_PAGE * (@page_num - 1)
       @posts = Post.order("updated_at DESC").limit(PER_PAGE).offset(offset)
-      @page_num = page_num
       render :index
     end
   end

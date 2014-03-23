@@ -6,5 +6,8 @@
   <% if @page_num > 1 %>
     <li class="previous"><a href="<%= url_for(:page, :id => @page_num-1) %>">&#8592; Newer</a></li>
   <% end %>
-  <li class="next"><a href="<%= url_for(:page, :id => @page_num+1) %>">Older &#8594;</a></li>
+
+  <% if @page_num < @pages %>
+    <li class="next"><a href="<%= url_for(:page, :id => @page_num+1) %>">Older &#8594;</a></li>
+  <% end %>
 </ul>
