@@ -8,10 +8,10 @@ class Tumble < Padrino::Application
   enable :sessions
 
   ##
-  # Caching support
-  #
+  # Caching support.
   register Padrino::Cache
   enable :caching
+  use ActiveRecord::QueryCache
 
   OmniAuth.config.logger = logger
   use OmniAuth::Builder do
