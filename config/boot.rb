@@ -21,7 +21,7 @@ Padrino::Logger::Config[:production][:log_static] = true
 I18n.default_locale = :en
 
 ## Configure your HTML5 data helpers
-Padrino::Helpers::TagHelpers::DATA_ATTRIBUTES.push(:dialog)
+#Padrino::Helpers::TagHelpers::DATA_ATTRIBUTES.push(:dialog)
 
 ##
 # Add your before (RE)load hooks here

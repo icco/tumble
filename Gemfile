@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.1.5'
+
 # Project requirements
 gem 'activerecord', '~> 3.0', :require => 'active_record'
 gem 'activesupport', :require => 'active_support/all'
