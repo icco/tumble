@@ -22,6 +22,24 @@ Tumble.controllers  do
     end
   end
 
+  get "/all.json" do
+    @posts = Post.order("updated_at DESC").all
+
+    ret = []
+    @posts.each do |p|
+      h = {
+        id: p.id,
+        datetime: p.updated_at,
+        text: p.summary,
+        title: p.title,
+      }
+      ret.push h
+    end
+
+    content_type :json
+    ret.to_json.gsub(/\n/, "\\\\n").gsub(/\r/, "\\\\r").gsub(/\t/, "\\\\t")
+  end
+
   post :webmention, :csrf_protection => false  do
     content_type :json
 
